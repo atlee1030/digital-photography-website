@@ -59,7 +59,7 @@ body {
     position: relative;
     z-index: 1;
   }
-
+/*tirnagle setting*/
   .triangle-container {
     position: relative;
     width: 0;
@@ -83,13 +83,13 @@ body {
     left: 50%;
     transform: translateX(-50%);
   }
-
+/*triangle aperture(defult set: top 260px left -230px)*/
   .triangle-container .label.aperture {
     top: 260px;
     left: -230px;
     transform: rotate(-60deg);
   }
-
+/*triangle shutter speed(defult set: top 260px right -260*/
   .triangle-container .label.shutter {
     top: 260px;
     right: -260px;
