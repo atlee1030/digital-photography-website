@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: 'Helvetica Neue', sans-serif;
+    position: relative;
+  }
+
+  .background-dots {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(#999 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .navbar h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+.navbar h1 a{
+    text-decoration: none;
+    color: black;
+}
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+
+
+  .content {
+    padding-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  .triangle-container {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 350px solid transparent;
+    border-right: 350px solid transparent;
+    border-bottom: 606px solid black;
+    transform: translateY(-20vh);
+  }
+
+  .triangle-container .label {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: black;
+    white-space: nowrap;
+  }
+
+  .triangle-container .label.iso {
+    top: 620px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .triangle-container .label.aperture {
+    top: 260px;
+    left: -230px;
+    transform: rotate(-60deg);
+  }
+
+  .triangle-container .label.shutter {
+    top: 260px;
+    right: -260px;
+    transform: rotate(60deg);
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+}

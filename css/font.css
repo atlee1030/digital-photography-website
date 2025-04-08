@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Pilowlava-Atome';
+    src: url(/fonts/Pilowlava-Atome.woff) format(woff),
+         url(/fonts/Pilowlava-Atome.woff2) format(woff2); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    font-size: 16px;
+    @media (max-width: 768px) {
+        
+    }
+}
+
+    
+
+h1{
+    font-family: "Pilowlava-Atome";
+    text-align: center center;
+    font-size: 32px;
+
+}
+
+#contents{
+    font-size: 16px;
+}
+
+h2{
+    font-family: "Pilowlava-Atome";
+    font-size: 2rem;
+
+}
+
+nav a{
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+
