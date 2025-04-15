@@ -37,6 +37,12 @@
     margin: 0 5rem;
   }
   
+  /*fade-in intro css*/
+  .fade-in{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
 
 /*for the mobile*/
   @media (max-width: 768px) {
@@ -51,5 +57,13 @@
   
     nav {
       gap: 1rem;
+    }
+  }
+
+/*fade-in intro css*/
+  @keyframes fadeInUp {
+    to{
+      opacity: 1;
+      transform: translateY(0);
     }
   }

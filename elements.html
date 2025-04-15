@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/elements.css">
 </head>
-<body>
+<body onload="rotateTriangle('intro')">
     <div class="background-dots"></div>
 
     <div class="navbar">
@@ -20,11 +20,56 @@
     </div>
   
     <div class="content">
-      <div class="triangle-container">
-        <span class="label iso">ISO</span>
-        <span class="label aperture">APERTURE</span>
-        <span class="label shutter">SHUTTER SPEED</span>
+      <div class="triangle-container" id="triangle">
+        <span class="label iso" onclick="rotateTriangle('iso')">ISO</span>
+        <span class="label aperture" onclick="rotateTriangle('aperture')">APERTURE</span>
+        <span class="label shutter" onclick="rotateTriangle('shutter')">SHUTTER SPEED</span>
       </div>
+
+        <div class="description-box" id="descriptionBox">
+          <p id="descriptionText">Click a label to see the description.</p>
+        </div>
     </div>
+
+      <script>
+        function rotateTriangle(label) {
+          const triangle = document.getElementById('triangle');
+          const descText = document.getElementById('descriptionText');
+          const descBox = document.getElementById('descriptionBox');
+
+          /*description-box location*/
+          descBox.classList.remove('description-aperture', 'description-iso', 'description-shutter');
+
+          if (label === 'aperture') descBox.classList.add('description-aperture');
+          else if (label === 'iso') descBox.classList.add('description-iso');
+          else if (label === 'shutter') descBox.classList.add('description-shutter');
+
+          /*description-box animation*/
+          descText.classList.remove('description-text-fade');
+          void descText.offsetWidth;
+          descText.classList.add('description-text-fade');
+          
+          /*different angle for each elements(trinangle)*/
+          const rotationMap = {
+            intro: 0,
+            aperture: 60,
+            shutter: 300,
+            iso: 180
+          };
+
+          const descriptions = {
+            intro: "This triangle represents the three essential exposure elements in digital photography: ISO, Aperture, and Shutter Speed.",
+            aperture: "Aperture refers to the adjustable opening in a camera lens. The larger the aperture value, the smaller the opening, allowing less light to enter. Conversely, the smaller the aperture value, the larger the opening, allowing more light to pass through. If the amount of light is not properly controlled, the developed photograph may turn out too dark or too bright. Additionally, the degree to which the aperture opens affects the depth of field, making it either deeper or shallower, which is a crucial factor in photography.",
+            shutter: "Shutter speed refers to when the camera's shutter remains open before closing. It has two significant effects on a photograph. First, it controls the duration for which the image sensor is exposed to light, determining the image's brightness. Second, by adjusting the shutter speed, one can either freeze fast-moving subjects or introduce motion blur to create a dynamic and expressive effect in the photograph.",
+            iso: "ISO refers to the sensitivity of a digital camera's image sensor or a film camera's film to light. It is adjusted when achieving proper exposure through the aperture, and the shutter speed alone is brutal due to insufficient light. In digital cameras, ISO can be adjusted directly within the camera settings and is typically indicated by a number following ISO. The higher the number, the more sensitive the sensor or film is to light, allowing for adequately exposed images even in low-light conditions. However, in film cameras, ISO cannot be changed mid-shoot, so it is recommended that the appropriate film be chosen based on the intended purpose of the photos and the expected lighting conditions."
+          };
+
+          triangle.style.transform = `rotate(${rotationMap[label]}deg)`;
+          descText.innerText = descriptions[label];
+
+        }
+
+      </script>
+
 </body>
 </html>

@@ -22,10 +22,10 @@ body {
     font-weight: bold;
   }
 
-.navbar h1 a{
+  .navbar h1 a{
     text-decoration: none;
     color: black;
-}
+  }
 
   .nav-links {
     display: flex;
@@ -38,6 +38,22 @@ body {
     font-weight: 600;
     padding: 0.5rem 1rem;
   }
+
+  .nav-links a.active{
+    font-weight: bold;
+    position: relative;
+  }
+  .nav-links a.active::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 80%;
+    height: 2px;
+    background: black;
+    transform: translateX(-50%);
+  }
+
 
   .hero {
     height: 100vh;
@@ -107,6 +123,13 @@ body {
     padding: 0 1rem;
   }
 
+ /*fade-in intro css(opacity, transform=text moving range, animation=fade-in)*/
+ .fade-in{
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
   @media screen and (max-width: 768px) {
 
     .navbar {
@@ -133,5 +156,13 @@ body {
     .timeline-period {
       text-align: center;
       padding-left: 0;
+    }
+  }
+
+/*fade-in intro css(after I range the 'translateY(0)' to 'translateY(-20px) it works even the page goes bigger. Set -20px because the text goes -20px from 20px*/
+  @keyframes fadeInUp {
+    to{
+      opacity: 1;
+      transform: translateY(-30px);
     }
   }
