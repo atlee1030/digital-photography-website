@@ -4,8 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/shots.css">
 </head>
 <body>
+    <div class="navbar">
+        <h1><a href="index.html">Digital Photography</a></h1>
+        <div class="nav-links">
+          <a href="history.html">History</a>
+          <a href="elements.html">Elements</a>
+          <a href="shots.html" class="active">Shots</a>
+        </div>
+    </div>
+    
+      <div class="wheel-section">
+        <div class="wheel" id="wheel">
+          <div class="hand" id="hand"></div>
+          <span class="label portrait" onclick="rotateTo('portrait')">PORTRAIT</span>
+          <span class="label landscape" onclick="rotateTo('landscape')">LANDSCAPE</span>
+          <span class="label commercial" onclick="rotateTo('commercial')">COMMERCIAL</span>
+          <span class="label street" onclick="rotateTo('street')">STREET PHOTOGRAPHY</span>
+        </div>
+      </div>
+
+      <div class="image-display" id="imageDisplay">
+        <img id="shotImage" alt="Shot Preview">
+      </div>
+      
+
+      <script>
+     function rotateTo(label) {
+        const hand = document.getElementById('hand');
+        const wheel = document.getElementById('wheel');
+        const img = document.getElementById('shotImage');
+
+        const angles = {
+            portrait: 0,
+            landscape: 90,
+            street: 180,
+            commercial: 270
+        };
+
+        const imagePaths = {
+            portrait: 'images/portrait.jpg',
+            landscape: 'images/landscape.jpg',
+            street: 'images/street.jpg',
+            commercial: 'images/commercial.jpg'
+        };
+
+        // 바늘 회전
+        hand.style.transform = `rotate(${angles[label]}deg)`;
+
+        // 휠 이동 + 축소
+        wheel.classList.add('moved');
+
+        // 이미지 교체
+        img.style.opacity = 0;
+        setTimeout(() => {
+            img.src = imagePaths[label];
+            img.style.opacity = 1;
+        }, 400);
+    }
+      </script>
     
 </body>
 </html>

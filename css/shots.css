@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  background-color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.navbar h1 a{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links a.active{
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-links a.active::after{
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 80%;
+  height: 2px;
+  background: black;
+  transform: translateX(-50%);
+}
+
+
+/*wheel css*/
+.wheel-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wheel {
+  width: 450px;
+  height: 450px;
+  border: 2px solid black;
+  border-radius: 50%;
+  position: relative;
+  transition: all 1s ease;
+  z-index: 10;
+}
+
+.wheel.moved {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.hand {
+  width: 2px;
+  height: 50%;
+  background: black;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: rotate(0deg);
+  transition: transform 1s ease;
+}
+
+/*big circle code*/
+.label {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 120px;
+  text-align: center;
+  transform: font-size 0.5s ease;
+}
+
+.label.portrait {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.label.street {
+  bottom: -37px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.label.landscape {
+  top: 50%;
+  right: -70px;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.label.commercial {
+  top: 50%;
+  left: -70px;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+/*circle when its small*/
+.wheel.moved .label{
+  font-size: 0.7rem;
+}
+
+.wheel.moved .label.portrait {
+  top: -15px;
+}
+
+.wheel.moved .label.street {
+  bottom: -27px;
+}
+
+.wheel.moved .label.landscape {
+  right: -70px;
+}
+
+.wheel.moved .label.commercial {
+  left: -70px;
+}
+
+.image-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  margin-top: 0;
+  z-index: 1;
+}
+
+#shotImage {
+  width: 400px;
+  max-width: 90%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wheel {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hand {
+    height: 150px;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+}
