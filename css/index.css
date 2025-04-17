@@ -36,6 +36,11 @@
     font-size: 1rem;
     margin: 0 5rem;
   }
+
+nav a:hover{
+  color: darkgoldenrod;
+  transition: color 0.3s ease;
+}
   
   /*fade-in intro css*/
   .fade-in{

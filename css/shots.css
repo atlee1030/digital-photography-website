@@ -131,7 +131,7 @@ body {
   transform: translateY(-50%) rotate(-90deg);
 }
 
-/*circle when its small*/
+/*circle when its small(not mobile)*/
 .wheel.moved .label{
   font-size: 0.7rem;
 }
@@ -163,10 +163,12 @@ body {
 }
 
 #shotImage {
-  width: 400px;
-  max-width: 90%;
+  width: 80vw;
+  max-width: 1000px;
+  height: auto;
   opacity: 0;
   transition: opacity 1s ease;
+  object-fit: contain;
 }
 
 @keyframes fadeIn {
@@ -179,21 +181,51 @@ body {
     flex-direction: column;
   }
 
-  .content {
-    flex-direction: column;
-    align-items: center;
+  /*
+  #shotImage{
+    width: 90vw;
+    max-width: 100%;
   }
 
+  /*mobile wheel setting, location, wheel size*/
   .wheel {
     width: 300px;
     height: 300px;
   }
 
-  .hand {
+  .wheel.moved {
+    transform: translateX(-120%);
+    width: 150px;
     height: 150px;
+    bottom: 2rem;
+    right: 1rem;
+  }
+
+  .hand {
+    height: 50%;
   }
 
   .label {
     font-size: 0.8rem;
+  }
+
+  .wheel.moved .label {
+    font-size: 0.6rem;
+  }
+
+  .label.portrait {
+    top: -18px;
+  }
+
+  .label.street {
+    bottom: -33px;
+  }
+
+  .label.landscape {
+    right: -70px;
+  }
+
+  .label.commercial {
+    left: -70px;
   }
 }
