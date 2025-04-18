@@ -3,69 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/shots.css">
 </head>
 <body>
-    <div class="navbar">
-        <h1><a href="index.html">Digital Photography</a></h1>
-        <div class="nav-links">
-          <a href="history.html">History</a>
-          <a href="elements.html">Elements</a>
-          <a href="shots.html" class="active">Shots</a>
-        </div>
+  <div class="navbar">
+    <h1><a href="index.html">Digital Photography</a></h1>
+    <div class="nav-links">
+      <a href="history.html">History</a>
+      <a href="elements.html">Elements</a>
+      <a href="shots.html" class="active">Shots</a>
     </div>
-    
-      <div class="wheel-section">
-        <div class="wheel" id="wheel">
-          <div class="hand" id="hand"></div>
-          <span class="label portrait" onclick="rotateTo('portrait')">PORTRAIT</span>
-          <span class="label landscape" onclick="rotateTo('landscape')">LANDSCAPE</span>
-          <span class="label commercial" onclick="rotateTo('commercial')">COMMERCIAL</span>
-          <span class="label street" onclick="rotateTo('street')">STREET PHOTOGRAPHY</span>
-        </div>
-      </div>
+  </div>
 
-      <div class="image-display" id="imageDisplay">
-        <img id="shotImage" alt="Shot Preview">
-      </div>
-      
+  <div class="wheel-section">
+    <div class="wheel" id="wheel">
+      <div class="hand" id="hand"></div>
+      <span class="label portrait" onclick="rotateTo('portrait')">PORTRAIT</span>
+      <span class="label landscape" onclick="rotateTo('landscape')">LANDSCAPE</span>
+      <span class="label commercial" onclick="rotateTo('commercial')">COMMERCIAL</span>
+      <span class="label street" onclick="rotateTo('street')">STREET<br>PHOTOGRAPHY</span>
+    </div>
+  </div>
 
-      <script>
-     function rotateTo(label) {
-        const hand = document.getElementById('hand');
-        const wheel = document.getElementById('wheel');
-        const img = document.getElementById('shotImage');
+  <!--this allows to work jav script and shows the images on the web-->
+  <div class="image-display" id="imageDisplay">
+    <img id="shotImage" alt="Shot Preview">
+  </div>
 
-        const angles = {
-            portrait: 0,
-            landscape: 90,
-            street: 180,
-            commercial: 270
-        };
+  <script>
+    /*same logic with elements page*/
+    function rotateTo(label) {
+      const hand = document.getElementById('hand');
+      const wheel = document.getElementById('wheel');
+      const img = document.getElementById('shotImage');
 
-        const imagePaths = {
-            portrait: 'images/portrait.jpg',
-            landscape: 'images/landscape.jpg',
-            street: 'images/street.jpg',
-            commercial: 'images/commercial.jpg'
-        };
+      const angles = {
+        portrait: 0,
+        landscape: 90,
+        street: 180,
+        commercial: 270
+      };
 
-        // 바늘 회전
-        hand.style.transform = `rotate(${angles[label]}deg)`;
+      /*all the photos are taken by me*/
+      const imagePaths = {
+        portrait: 'images/portrait.jpg',
+        landscape: 'images/landscape.jpg',
+        street: 'images/street.jpg',
+        commercial: 'images/commercial.jpg'
+      };
 
-        // 휠 이동 + 축소
-        wheel.classList.add('moved');
+      /*The hand is a needle extending from the center of the wheel (acting like a clock hand). Take an angle corresponding to the label clicked by the user from the angles object and rotate the needle. Add a .moved class to the wheel, making the wheel smaller and moving it to the bottom right of the screen.*/
+      hand.style.transform = `rotate(${angles[label]}deg)`;
+      wheel.classList.add('moved');
+      img.style.opacity = 0;
 
-        // 이미지 교체
-        img.style.opacity = 0;
-        setTimeout(() => {
-            img.src = imagePaths[label];
-            img.style.opacity = 1;
-        }, 400);
+      /*when the image is changed, after 400ms(0.4sec) change in to other photo*/
+      setTimeout(() => {
+        img.src = imagePaths[label];
+        img.style.opacity = 1;
+      }, 400);
     }
-      </script>
-    
+  </script>
 </body>
 </html>

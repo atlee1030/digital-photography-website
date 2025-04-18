@@ -1,3 +1,4 @@
+/*used type face which was on the lecture (https://velvetyne.fr/fonts/pilowlava/)*/
 @font-face {
     font-family: 'Pilowlava-Atome';
     src: url('fonts/Pilowlava-Atome.woff') format('woff'),
@@ -6,13 +7,9 @@
     font-style: normal;
 }
 
-:root{
-    font-size: 16px;
-    @media (max-width: 768px) {
-        
-    }
+body{
+    font-family: 'Helvetica Neue', sans-serif; 
 }
-
     
 
 h1{
@@ -28,7 +25,6 @@ h1{
 
 h2{
     font-family: "Pilowlava-Atome";
-    font-size: 2rem;
 
 }
 

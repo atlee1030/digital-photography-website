@@ -3,96 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History</title>
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/history.css">
 </head>
 <body>
-    <div class="navbar">
-        <h1><a href="index.html">Digital Photography</a></h1>
-        <div class="nav-links">
-          <a href="history.html" class="active">History</a>
-          <a href="elements.html">Elements</a>
-          <a href="shots.html">Shots</a>
-        </div>
+   <!-- Navbar -->
+  <div class="navbar">
+    <h1><a href="index.html">Digital Photography</a></h1>
+    <div class="nav-links"> <!--make different class"nav-links" to place in a different position-->
+      <a href="history.html" class="active">History</a>
+      <a href="elements.html">Elements</a>
+      <a href="shots.html">Shots</a>
+    </div>
+  </div>
+
+  <!-- Hero Section(fist page which is can be intro of this page) -->
+  <section class="hero" id="history">
+    <div class="hero-grid"> <!--alignment of internal elements horizontally-->
+      <div class="hero-title fade-in"> <!--make a individual class to add fade in animation doesn't effecting to buttons-->
+        <h2>History of <br> Photography</h2> <!--br to change to line-->
       </div>
-    
-      <section class="hero" id="history">
-        <div class="hero-grid">
-          <div class="hero-title fade-in">
-            <h2>History of <br> Photography</h2>
-          </div>
-          <div class="hero-buttons">
-            <a href="#early-section" class="era-btn">Early Photography</a>
-            <a href="#film-section" class="era-btn">Film Era</a>
-            <a href="#digital-section" class="era-btn">Digital Era</a>
-          </div>
-        </div>
-      </section>
+      <div class="hero-buttons"> <!--users can go to the specific era that they wanna browse-->
+        <a href="#early-section" class="era-btn">Early Photography</a>
+        <a href="#film-section" class="era-btn">Film Era</a>
+        <a href="#digital-section" class="era-btn">Digital Era</a>
+      </div>
+    </div>
+  </section>
 
-      <!--pharagraph about 'history of photography'-->
-      <section class="intro-text">
-        <div class="container">
-          <p>
-            The history of photography is more extensive than the timeline provided below. However, since this website is about digital photography, it has produced a timeline that focuses on the development of cameras. Based on the development of cameras, it is thought that the historical period of photography can be divided into Early Photography, Film Era, and Digital Era.
-          </p>
-      
-          <p>
-            Before the development of portable cameras, the photography method required a lot of human labor. However, from Film Era, when portable cameras began to be invented, it became easier to take pictures if you had knowledge of photography than how to use cameras.
-          </p>
-      
-          <p>
-            Then, what is the difference between Film Era and Digital Era? The development of sensors and immediate results can be confirmed. In the past, photography through film could only be viewed through several tasks even after the camera, but after the advent of the Digital Camera, the sensor recognized the phenomenon and then previewed the results through the display. It was an invention that completely compensated for the shortcomings of the Film Camera that relied on one's senses in the past.
-          </p>
-      
-          <p>
-            There are many evaluations that the recent development of cameras has reached its limit. However, several large corporations are still trying to make progress, and photographers are looking forward to their invention.
-          </p>
-        </div>
-      </section>
-      
-      <!-- TIMELINE SECTION -->
-      <section class="timeline-section" id="timeline">
-        <div class="timeline">
-          <div id="early-section" class="timeline-period">Early Photography</div>
-      
-          <div class="timeline-entry">
-            <p><strong>1839</strong> - Daguerreotype Camera & Photo</p>
-          </div>
+  <!-- Intro Paragraph -->
+  <section class="intro-text"> <!--made 4 different p section to divide paragraph-->
+    <div class="container"> 
+      <p>The history of photography is more extensive than the timeline provided below. However, since this website is about digital photography, it has produced a timeline that focuses on the development of cameras. Based on the development of cameras, it is thought that the historical period of photography can be divided into Early Photography, Film Era, and Digital Era.</p>
+      <p>Before the development of portable cameras, the photography method required a lot of human labor. However, from Film Era, when portable cameras began to be invented, it became easier to take pictures if you had knowledge of photography than how to use cameras.</p>
+      <p>Then, what is the difference between Film Era and Digital Era? The development of sensors and immediate results can be confirmed. In the past, photography through film could only be viewed through several tasks even after the camera, but after the advent of the Digital Camera, the sensor recognized the phenomenon and then previewed the results through the display. It was an invention that completely compensated for the shortcomings of the Film Camera that relied on one's senses in the past.</p>
+      <p>There are many evaluations that the recent development of cameras has reached its limit. However, several large corporations are still trying to make progress, and photographers are looking forward to their invention.</p>
+    </div>
+  </section>
 
-          <div id="film-section" class="timeline-period">Film Era</div>
+  <!-- Timeline Section -->
+  <section class="timeline-section" id="timeline">
+    <div class="timeline">
+      <div id="early-section" class="timeline-period">Early Photography</div>
+      <div class="timeline-entry">
+        <p><strong>1839</strong> - Daguerreotype Camera & Photo</p>
+      </div>
 
-          <div class="timeline-entry">
-            <p><strong>1922</strong> - Leica 0 35mm Film Camera</p>
-          </div>      
-          <div class="timeline-entry">
-            <p><strong>1950</strong> - SLR (Single-Lens Reflex) Camera</p>
-          </div>
-          <div class="timeline-entry">
-            <p><strong>1969</strong> - Hasselblad 907x Film Camera<br>The first camera to photograph the Moon</p>
-          </div>
-      
-          <div id="digital-section" class="timeline-period">Digital Era</div>
-      
-          <div class="timeline-entry">
-            <p><strong>1999</strong> - Nikon D1 (Digital SLR Camera, DSLR)</p>
-          </div>
-          <div class="timeline-entry">
-            <p><strong>2003</strong> - Canon 300D (DSLR)</p>
-          </div>
-          <div class="timeline-entry">
-            <p><strong>2004</strong> - Epson R-D1 (Mirrorless Camera)</p>
-          </div>
-          <div class="timeline-entry">
-            <p><strong>2013</strong> - Sony A7</p>
-          </div>
-          <div class="timeline-entry">
-            <p><strong>2018</strong> - Canon EOS R, Nikon Z6</p>
-          </div>
-          <div class="timeline-entry">
-            <p><strong>2024</strong> - Sony A9M3 (Global Shutter)</p>
-          </div>
-        </div>
-      </section>
+      <div id="film-section" class="timeline-period">Film Era</div>
+      <div class="timeline-entry">
+        <p><strong>1922</strong> - Leica 0 35mm Film Camera</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>1950</strong> - SLR (Single-Lens Reflex) Camera</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>1969</strong> - Hasselblad 907x Film Camera<br>The first camera to photograph the Moon</p>
+      </div>
+
+      <div id="digital-section" class="timeline-period">Digital Era</div>
+      <div class="timeline-entry">
+        <p><strong>1999</strong> - Nikon D1 (Digital SLR Camera, DSLR)</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>2003</strong> - Canon 300D (DSLR)</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>2004</strong> - Epson R-D1 (Mirrorless Camera)</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>2013</strong> - Sony A7</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>2018</strong> - Canon EOS R, Nikon Z6</p>
+      </div>
+      <div class="timeline-entry">
+        <p><strong>2024</strong> - Sony A9M3 (Global Shutter)</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

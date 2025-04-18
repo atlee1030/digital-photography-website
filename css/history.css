@@ -1,260 +1,269 @@
-/*history web page*/
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
-    background-color: white;
-  }
+  margin: 0;
+  scroll-behavior: smooth;
+  background-color: #fdeedf;
+}
 
 html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+/*use position sticky to stay on the top even I scroll down so that I can keep go on other page anytime I want*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fdeedf;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .navbar h1 {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
+/*digital photography(going to homepage*/
+.navbar h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
-  .navbar h1 a{
-    text-decoration: none;
-    color: black;
-  }
+.navbar h1 a {
+  text-decoration: none;
+  color: black;
+}
 
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-  }
+/*history, elements, shots nav bar*/
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
 
-  .nav-links a {
-    text-decoration: none;
-    color: black;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-  }
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
 
-  .nav-links a.active{
-    font-weight: bold;
-    position: relative;
-  }
-  
-  .nav-links a.active::after{
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    width: 80%;
-    height: 2px;
-    background: black;
-    transform: translateX(-50%);
-  }
+/*click underline activation*/
+.nav-links a.active {
+  font-weight: bold;
+  position: relative;
+}
 
+/*combination of ::after and content: '' aloow to show up actual line in website, use position absolute to appear on the proper place under the nav bar*/
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 80%;
+  height: 2px;
+  background: black;
+  transform: translateX(-50%);
+}
 
-  .hero {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-    padding: 0 2rem;
-  }
-  
-  .hero-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .hero-title {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    max-width: 700px;
-    padding-left: 2rem;
-  }
-  
-  .hero-title h2 {
-    font-size: 6vw;
-    font-weight: 800;
-    line-height: 1.2;
-    margin: 0;
-    text-align: left;
-  }
-  
-  .hero-buttons {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .era-btn {
-    padding: 0.6rem 1.2rem;
-    border: 1px solid black;
-    text-decoration: none;
-    font-weight: 600;
-    color: black;
-    font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* 화면에 따라 글씨 크기 자동 조절 */
-    width: clamp(140px, 20vw, 200px);         /* 너비도 화면 비율 따라 조절 */
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-  
-  .era-btn:hover {
-    background-color: black;
-    color: white;
-  }
+.hero {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
 
-  .intro-text {
-    padding: 3rem 2rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-    text-align: justify;
-  }
-  
-  .intro-text p + p {
-    margin-top: 1.5rem;
-  }
+/*for the left h2, right buttons*/
+.hero-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 
-  .timeline-section {
-    position: relative;
-    padding: 10rem 0 14rem;
-  }
+.hero-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  padding-left: 2rem;
+}
 
-  .timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+.hero-title h2 {
+  font-size: 6vw;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  text-align: left;
+}
 
-  .timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    background-color: #411010;
-    z-index: 0;
-  }
+/*Sort by same line using flex, and vertically using column*/
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: -4rem; 
+}
 
-  .timeline-period {
-    position: relative;
-    text-align: center;
-    margin: 3rem auto 1rem;
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: red;
-    background-color: white;
-    z-index: 1;
-    width: max-content;
-    padding: 0 1rem;
-    scroll-margin-top: 100px;
-  }
-  /*timeline set up(position, width, lenght)*/
-  .timeline-entry {
-    position: relative;
-    width: 100%;
-    margin: 6rem 0;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    z-index: 1;
-  }
+/*use clamp to be changed when its on mobile*/
+.era-btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid black;
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  width: clamp(140px, 20vw, 200px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
 
-  .timeline-entry p {
-    font-weight: 500;
-    margin: 0;
-    background-color: white;
-    padding: 0 1rem;
-  }
+/*button box*/
+.era-btn:hover {
+  background-color: black;
+  color: white;
+}
 
- /*fade-in intro css(opacity, transform=text moving range, animation=fade-in)*/
- .fade-in{
+/*general setting of intro paragraph*/
+.intro-text {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify;
+}
+
+/*use p+p to relate all paragraph without useless margins(effect to all paragraphy excapt first paragraph*/
+.intro-text p + p {
+  margin-top: 1.5rem;
+}
+
+/*time line code(cite: https://www.w3schools.com/howto/howto_css_timeline.asp)*/
+
+.timeline-section {
+  position: relative;
+  padding: 10rem 0 14rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background-color: black;
+  z-index: 0;
+}
+
+/*used background color to each text can be seem like on the beween of the line*/
+.timeline-period {
+  position: relative;
+  text-align: center;
+  margin: 3rem auto 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: red;
+  background-color: #fdeedf;
+  z-index: 1;
+  width: max-content;
+  padding: 0 1rem;
+  scroll-margin-top: 100px;
+}
+
+.timeline-entry {
+  position: relative;
+  width: 100%;
+  margin: 6rem 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+/*used background color to each text can be seem like on the beween of the line*/
+.timeline-entry p {
+  font-weight: 500;
+  margin: 0;
+  background-color: #fdeedf;
+  padding: 0 1rem;
+}
+
+.fade-in {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease-out forwards;
 }
 
-  @media screen and (max-width: 768px) {
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+}
 
-    .navbar {
-        flex-direction: column;
-    }
-
-    .hero-buttons {
-      position: static;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 2rem;
-      gap: 1rem;
-    }
-  
-    .era-btn {
-      width: 80%;
-      font-size: 1rem;
-    }
-  
-    .hero-grid {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .hero-title h2 {
-      font-size: 8vw;
-    }
-
-    .intro-text {
-      padding: 2rem 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
-      text-align: left;
-    }
-  
-    .timeline-entry {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .timeline-entry p {
-      width: 90%;
-      padding: 0;
-      text-align: center;
-    }
-
-    .timeline::before {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .timeline-period {
-      text-align: center;
-      padding-left: 0;
-    }
+/*mobile activation section*/
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
   }
 
-/*fade-in intro css(after I range the 'translateY(0)' to 'translateY(-20px) it works even the page goes bigger. Set -20px because the text goes -20px from 20px*/
-  @keyframes fadeInUp {
-    to{
-      opacity: 1;
-      transform: translateY(-30px);
-    }
+  .hero-buttons {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
   }
+
+  .era-btn {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .hero-grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title h2 {
+    font-size: 8vw;
+  }
+
+  .intro-text {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  .timeline-entry {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline-entry p {
+    width: 90%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-period {
+    text-align: center;
+    padding-left: 0;
+  }
+}

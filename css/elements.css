@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   scroll-behavior: smooth;
   background-color: white;
 }
@@ -54,6 +53,7 @@ body {
   transform: translateX(-50%);
 }
 
+/*background code*/
   .background-dots {
     position: fixed;
     top: 0;
@@ -66,6 +66,7 @@ body {
     pointer-events: none;
   }
 
+  /*general setting of triangle, need this class when I change triangle genarally*/
   .content {
     padding-top: 160px;
     display: flex;
@@ -79,7 +80,7 @@ body {
     z-index: 1;
   }
 
-/*tirnagle setting*/
+/*tirnagle setting(I learned how to make triangle from https://sitero.co.kr/triangle) */
   .triangle-container {
     position: relative;
     width: 0;
@@ -90,6 +91,7 @@ body {
     transform: translateY(-20vh);
   }
 
+  /*used position: absolute to all elements to stay on the triangle(also used nowrap not to ruin current shape of elements*/ 
   .triangle-container .label {
     position: absolute;
     font-weight: bold;
@@ -122,7 +124,7 @@ body {
     width: 300px;
     margin-left: 4rem;
     position: relative;
-    top: 60px; /* 위로 올림 */
+    top: 60px; 
     font-size: 0.95rem;
     line-height: 1.6;
     color: #333;
@@ -145,6 +147,7 @@ body {
     top: 150px;
   }
 
+  /*fade in code when ever you choose different elements*/
   .description-text-fade {
     animation: fadeIn 0.8s ease-in-out;
   }
@@ -170,6 +173,7 @@ body {
   }
 
 
+  /*mobile activation*/
 @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;

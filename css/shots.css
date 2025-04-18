@@ -1,16 +1,15 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
+  scroll-behavior: smooth;
   background-color: white;
 }
 
+/*nav bar codes*/
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: white;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -21,7 +20,8 @@ body {
   font-weight: bold;
 }
 
-.navbar h1 a{
+.navbar h1 a,
+.nav-links a {
   text-decoration: none;
   color: black;
 }
@@ -32,18 +32,16 @@ body {
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: black;
   font-weight: 600;
   padding: 0.5rem 1rem;
 }
 
-.nav-links a.active{
+.nav-links a.active {
   font-weight: bold;
   position: relative;
 }
 
-.nav-links a.active::after{
+.nav-links a.active::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -54,15 +52,13 @@ body {
   transform: translateX(-50%);
 }
 
-
-/*wheel css*/
+/*wheel style code and function. helped by (https://blog.naver.com/gocathy/220298505911)*/
 .wheel-section {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  overflow: hidden;
 }
 
 .wheel {
@@ -84,6 +80,7 @@ body {
   height: 200px;
 }
 
+/*stick inside of the wheel*/
 .hand {
   width: 2px;
   height: 50%;
@@ -96,7 +93,6 @@ body {
   transition: transform 1s ease;
 }
 
-/*big circle code*/
 .label {
   position: absolute;
   font-size: 1rem;
@@ -104,105 +100,76 @@ body {
   cursor: pointer;
   width: 120px;
   text-align: center;
-  transform: font-size 0.5s ease;
 }
 
-.label.portrait {
+.portrait {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.label.street {
-  bottom: -37px;
+.street {
+  bottom: -40px;
   left: 50%;
   transform: translateX(-50%) rotate(180deg);
 }
 
-.label.landscape {
+.landscape {
   top: 50%;
   right: -70px;
   transform: translateY(-50%) rotate(90deg);
 }
 
-.label.commercial {
+.commercial {
   top: 50%;
   left: -70px;
   transform: translateY(-50%) rotate(-90deg);
 }
 
-/*circle when its small(not mobile)*/
-.wheel.moved .label{
+/*When the user clicks on the label, the wheel shrinks and moves with the rotating needle*/
+.wheel.moved .label {
   font-size: 0.7rem;
 }
 
-.wheel.moved .label.portrait {
-  top: -15px;
-}
-
-.wheel.moved .label.street {
-  bottom: -27px;
-}
-
-.wheel.moved .label.landscape {
-  right: -70px;
-}
-
-.wheel.moved .label.commercial {
-  left: -70px;
-}
+.wheel.moved .portrait { top: -15px; }
+.wheel.moved .street { bottom: -27px; }
+.wheel.moved .landscape { right: -70px; }
+.wheel.moved .commercial { left: -70px; }
 
 .image-display {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: auto;
-  margin-top: 0;
   z-index: 1;
 }
 
+/*this code only effects to id="shotImage" which I set in html and jav script*/
 #shotImage {
   width: 80vw;
-  max-width: 1000px;
+  max-width: 800px;
   height: auto;
   opacity: 0;
   transition: opacity 1s ease;
-  object-fit: contain;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/*mobile activation*/
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
   }
 
-  /*
-  #shotImage{
-    width: 90vw;
-    max-width: 100%;
-  }
-
-  /*mobile wheel setting, location, wheel size*/
   .wheel {
     width: 300px;
     height: 300px;
   }
 
   .wheel.moved {
-    transform: translateX(-120%);
     width: 150px;
     height: 150px;
     bottom: 2rem;
     right: 1rem;
-  }
-
-  .hand {
-    height: 50%;
+    transform: translateX(-120%);
   }
 
   .label {
@@ -213,19 +180,8 @@ body {
     font-size: 0.6rem;
   }
 
-  .label.portrait {
-    top: -18px;
-  }
-
-  .label.street {
-    bottom: -33px;
-  }
-
-  .label.landscape {
-    right: -70px;
-  }
-
-  .label.commercial {
-    left: -70px;
+  #shotImage {
+    width: 90vw;
+    max-width: 100%;
   }
 }
